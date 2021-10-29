@@ -1,0 +1,20 @@
+Sčítání 1 + 2
+
+Odčítání 5 - 3
+
+Násobení 2*5
+
+Dělení 12/4 Vrátí desetinné číslo
+
+Celočíselné dělení 14//3 Vrátí celou část po dělení
+
+Umocňování 2**2
+
+Modulo 10%3 Vrátí zbytek po dělení
+
+--------------------------------------------------------------------------
+
+int - celé číslo
+float - desetinné číslo
+str - řětězec
+
