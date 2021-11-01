@@ -5,13 +5,13 @@ pokracovat_program = True
 print("Black Jack\n")
 name_hrac1 = input("Hrac 1 prezdivka: ")
 name_hrac2 = input("Hrac 2 prezdivka: ")
-pouzite_karty = list()
-blacklist = list()
-opakovani = 1
-last = 0
-soucet1 = 0
-soucet2 = 0
 while pokracovat_program:
+    pouzite_karty = list()
+    blacklist = list()
+    opakovani = 1
+    last = 0
+    soucet1 = 0
+    soucet2 = 0
     hrac1 = True
     hrac2 = False
     pokracovat_hra = True
@@ -155,9 +155,7 @@ while pokracovat_program:
             if odpoved_program == "y" or odpoved_program == "Y":
                 pokracovat_program = True
                 pokracovat_hra = False
-                os.system("clear")
             elif odpoved_program == "n" or odpoved_program == "N":
-                os.system("clear") 
                 pokracovat_program = False
                 pokracovat_hra = False                           #konec vyhodnoceni                 
 
