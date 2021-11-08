@@ -215,4 +215,4 @@ while pokracovat_program:
                 else:
                     print("Zadali jste neplatnou volbu")
                     spravna_odpoved7 = True
-                    pokracovat_hra = False                           #konec vyhodnoceni 
+                    pokracovat_hra = False                          #konec vyhodnoceni 
