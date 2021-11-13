@@ -145,11 +145,11 @@ while pokracovat:
         stovka = tisic_list[1]
         if int(stovka) == 0:
             cislo_stovka = ""
-            if int(stovka) <= 3:
+        if int(stovka) <= 3:
                 pocet_1 = int(stovka)/1
                 cislo_stovka = "C" * int(pocet_1)
-            else:
-                cislo_stovka = "CD"
+        elif int(stovka) == 4:
+            cislo_stovka == "CD"
         elif int(stovka) == 5:
             cislo_stovka = "D"
         elif int(stovka) >= 6:
@@ -193,6 +193,3 @@ while pokracovat:
         else:
             cislo_jednotka = ""
         print(cislo_tisic + cislo_stovka + cislo_desitka + cislo_jednotka)
-            
-                
-                
