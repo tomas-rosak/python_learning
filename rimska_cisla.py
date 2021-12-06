@@ -223,5 +223,24 @@ while pokracovat:
             elif i == "M":
                 i = 1000
                 prvky_cisla.append(i)
-        print(prvky_cisla)            
+        opakovani = 0
+        opakovani_2 = 0
+        opakovani_3 = 0
+        last = 0
+        for i in prvky_cisla:
+            if (opakovani + 1) < 3:
+                if i == last:
+                    opakovani += 1
+                    last = i
+                else:
+                    last = i
+            elif (opakovani_2 + 1) < 3:
+                if i == last:
+                    opakovani_2 += 1
+                    last = i
+                else:
+                    last = i
+        print((opakovani + 1), " ", (opakovani_2 + 1)
+
+            
 #I, V, X, L, C, D, M = 1, 5, 10, 50, 100, 500, 1000
