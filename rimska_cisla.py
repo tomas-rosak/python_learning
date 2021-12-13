@@ -318,7 +318,29 @@ while pokracovat:
                         po = hodnota[x]
                     else:
                         x = -1
-                hodnota = mezi_vypocty 
+                hodnota = mezi_vypocty
+                print(hodnota)
+                cislo = 0
+                pocet = 0
+                for prvek in hodnota:
+                    pocet += 1
+                    cislo = i
+                if pocet == 1:
+                    print("Vase cislo:", cislo)
+                else:
+                    mezi_vypocty = []
+                    opakovani = 0
+                    for i in hodnota:
+                        if opakovani == 0:
+                            if i < po:
+                                if i == 10 or i == 100 or i == 1:
+                                    i = po - i
+                                    mezi_vypocty.append(i)
+                                else:
+                                    print("Chyba")
+                    hodnota = mezi_vypocty
+                    print(hodnota)              
     else:
         print("Zadali jste spatne cislo")
 #I, V, X, L, C, D, M = 1, 5, 10, 50, 100, 500, 1000
+
