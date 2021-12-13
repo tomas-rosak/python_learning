@@ -198,49 +198,127 @@ while pokracovat:
                 cislo_jednotka = ""
             print(cislo_tisic + cislo_stovka + cislo_desitka + cislo_jednotka)
     elif volba == "2":
+        I, V, X, L, C, D, M = 1, 5, 10, 50, 100, 500, 1000
         cislo1 = input("Zadejte cislo k prevodu: ")
-        cislo2 = cislo1
-        prvky_cisla = []
-        for i in str(cislo2):
-            if i == "I":
-                i = 1
-                prvky_cisla.append(i)
-            elif i == "V":
-                i = 5
-                prvky_cisla.append(i)
-            elif i == "X":
-                i = 10
-                prvky_cisla.append(i)
-            elif i == "L":
-                i = 50
-                prvky_cisla.append(i)
-            elif i == "C":
-                i = 100
-                prvky_cisla.append(i)
-            elif i == "D":
-                i = 500
-                prvky_cisla.append(i)
-            elif i == "M":
-                i = 1000
-                prvky_cisla.append(i)
-        opakovani = 0
-        opakovani_2 = 0
-        opakovani_3 = 0
-        last = 0
-        for i in prvky_cisla:
-            if (opakovani + 1) < 3:
-                if i == last:
+        spravne = True
+        pocet = 0
+        prvky_cisla = [cislo1]
+        for prvek in cislo1:
+            pocet += 1
+        for x in cislo1:
+            if spravne:
+                if x == "I" or x == "V" or x == "X" or x == "L" or x == "C" or x == "D" or x == "M":
+                    spravne = True
+                else:
+                    spravne = False
+        if spravne:
+            prvky_cisla = []
+            hodnota = []
+            mezi_vypocty = []
+            for prvek in cislo1:
+                if prvek == "I":
+                    prvek = 1
+                    prvky_cisla.append(prvek)
+                    hodnota.append(1)
+                elif prvek == "V":
+                    prvek = 5
+                    prvky_cisla.append(prvek)
+                    hodnota.append(5)
+                elif prvek == "X":
+                    prvek = 10
+                    prvky_cisla.append(prvek)
+                    hodnota.append(10)
+                elif prvek == "L":
+                    prvek = 50
+                    prvky_cisla.append(prvek)
+                    hodnota.append(50)
+                elif prvek == "C":
+                    prvek = 100
+                    prvky_cisla.append(prvek)
+                    hodnota.append(100)
+                elif prvek == "D":
+                    prvek = 500
+                    prvky_cisla.append(prvek)
+                    hodnota.append(500)
+                elif prvek == "M":
+                    prvek = 1000
+                    prvky_cisla.append(prvek)
+                    hodnota.append(1000)
+            opakovani = 1
+            last = ""
+            spravne = True
+            for i in prvky_cisla:
+                if spravne:
+                    if i == last:
+                        opakovani += 1
+                    else:
+                        opakovani = 1
+                    last = i
+                    if opakovani <= 3:
+                        spravne = True
+                    else:
+                        spravne = False
+            if spravne == False:
+                print("Nektery prvek je v cisle vice nez 3krat")
+            if spravne:
+                opakovani = 0
+                last = ""
+                po = ""
+                x = 1
+                for i in hodnota:
+                    if i == last:
+                        i = i + last
+                        mezi_vypocty.append(i)
+                    elif opakovani >= 1:
+                        if (i != last and po != i) or x == -1:
+                            mezi_vypocty.append(i)
+                    elif opakovani == 0:
+                        if pocet == 1:
+                           mezi_vypocty.append(i) 
+                        else:
+                            po = hodnota[1]
+                            if i != po:
+                                mezi_vypocty.append(i)   
+                    else:
+                        print("nekde nastala chyba kurva")
+                    last = i
                     opakovani += 1
+                    if pocet > x + 1:
+                        x += 1
+                        po = hodnota[x]
+                    else:
+                        x = -1
+                hodnota = mezi_vypocty
+                pocet = 0
+                mezi_vypocty = []
+                for prvek in hodnota:
+                    pocet += 1
+                last = 0
+                opakovani = 0
+                po = ""
+                x = 1
+                for i in hodnota:
+                    if i == last / 2:
+                        i = i + last
+                        mezi_vypocty.append(i)
+                    elif opakovani >= 1: 
+                        if (i / 2 != po and i / 2 != last) or x == -1:
+                            mezi_vypocty.append(i)
+                    elif opakovani == 0:
+                        if pocet == 1:
+                            mezi_vypocty.append(i)
+                        else:
+                            po = hodnota[1]
+                            if i != po * 2:
+                                mezi_vypocty.append(i)         
                     last = i
-                else:
-                    last = i
-            elif (opakovani_2 + 1) < 3:
-                if i == last:
-                    opakovani_2 += 1
-                    last = i
-                else:
-                    last = i
-        print((opakovani + 1), " ", (opakovani_2 + 1)
-
-            
+                    opakovani += 1
+                    if pocet > x + 1:
+                        x += 1
+                        po = hodnota[x]
+                    else:
+                        x = -1
+                hodnota = mezi_vypocty 
+    else:
+        print("Zadali jste spatne cislo")
 #I, V, X, L, C, D, M = 1, 5, 10, 50, 100, 500, 1000
