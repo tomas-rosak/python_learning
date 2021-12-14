@@ -200,9 +200,11 @@ while pokracovat:
     elif volba == "2":
         I, V, X, L, C, D, M = 1, 5, 10, 50, 100, 500, 1000
         cislo1 = input("Zadejte cislo k prevodu: ")
+        
         spravne = True
         pocet = 0
         prvky_cisla = [cislo1]
+        
         for prvek in cislo1:
             pocet += 1
         for x in cislo1:
@@ -212,9 +214,11 @@ while pokracovat:
                 else:
                     spravne = False
         if spravne:
+            
             prvky_cisla = []
             hodnota = []
             mezi_vypocty = []
+            
             for prvek in cislo1:
                 if prvek == "I":
                     prvek = 1
@@ -244,9 +248,11 @@ while pokracovat:
                     prvek = 1000
                     prvky_cisla.append(prvek)
                     hodnota.append(1000)
+                    
             opakovani = 1
             last = ""
             spravne = True
+            
             for i in prvky_cisla:
                 if spravne:
                     if i == last:
@@ -261,10 +267,12 @@ while pokracovat:
             if spravne == False:
                 print("Nektery prvek je v cisle vice nez 3krat")
             if spravne:
+                
                 opakovani = 0
                 last = ""
                 po = ""
                 x = 1
+                
                 for i in hodnota:
                     if i == last:
                         i = i + last
@@ -293,10 +301,12 @@ while pokracovat:
                 mezi_vypocty = []
                 for prvek in hodnota:
                     pocet += 1
+                    
                 last = 0
                 opakovani = 0
                 po = ""
                 x = 1
+                
                 for i in hodnota:
                     if i == last / 2:
                         i = i + last
@@ -328,8 +338,12 @@ while pokracovat:
                 if pocet == 1:
                     print("Vase cislo:", cislo)
                 else:
+                    
                     mezi_vypocty = []
                     opakovani = 0
+                    x = 1
+                    po = hodnota[x]
+                    
                     for i in hodnota:
                         if opakovani == 0:
                             if i < po:
@@ -338,9 +352,37 @@ while pokracovat:
                                     mezi_vypocty.append(i)
                                 else:
                                     print("Chyba")
+                            else:
+                                mezi_vypocty.append(i)    
+                            last = i
+                            opakovani += 1
+                            if pocet > x + 1:
+                                x += 1
+                                po = hodnota[x]
+                            else:
+                                x = -1
+                        else:
+                            po = hodnota[x]
+                            if i < po:
+                                if i == 10 or i == 100 or i == 1:
+                                    i = po - i
+                                    mezi_vypocty.append(i)
+                            else:
+                                 if i < last and i < po:
+                                     mezi_vypocty.append(i)
+                                 elif po == -1:
+                                    mezi_vypocty.append(i)    
+                            if pocet > x + 1:
+                                x += 1
+                                po = hodnota[x]
+                            else:
+                                x = -1
+                            last = i
+                            opakovani += 1             
                     hodnota = mezi_vypocty
                     print(hodnota)              
     else:
         print("Zadali jste spatne cislo")
 #I, V, X, L, C, D, M = 1, 5, 10, 50, 100, 500, 1000
+
 
