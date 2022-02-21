@@ -1,0 +1,14 @@
+sudy_mensi = 0
+interval = 0
+lichy_vetsi = 0
+for i in range(1,11):
+    cislo = int(input("Zadejte " + str(i) + ". cislo: "))
+    if (cislo % 2 == 0) and cislo < 30:
+        sudy_mensi += 1
+    elif 30 <= cislo <= 80:
+        interval += 1
+    elif (cislo % 2 != 0) and cislo > 80:
+        lichy_vetsi += 1
+print("\nSudých a současně menší než 30:", sudy_mensi)
+print("V intervalu <30;80>:", interval)
+print("Lichých a současně větších jak 80:", lichy_vetsi)
