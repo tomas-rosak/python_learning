@@ -1,0 +1,32 @@
+ucet = int(input("Zadej obnos penez, ktere chcete vlozit na vas ucet: "))
+utraceno = 0
+while ucet > 0:
+    print("\n1 - Kniha 250 Kc")
+    print("2 - Kalhoty 1000 Kc")
+    print("3 - Mikina 1500 Kc")        #chtel jsem vylepsit
+    print("4 - Batoh 2000 Kc")
+    print("5 - Mobil 4000 Kc")
+    print("6 - Konec nakupu \n")
+    volba = int(input("Zadejte cislo vaseho nakupu: "))
+    if volba == 1:
+        cena = 250
+    elif volba == 2:
+        cena = 1000
+    elif volba == 3:
+        cena = 1500
+    elif volba == 4:
+        cena = 2000
+    elif volba == 5:
+        cena = 4000
+    elif volba == 6:
+        break
+    if cena <= ucet:
+        ucet -= cena
+        utraceno += cena
+        print("Celkem utraceno:", utraceno)
+        print("Vas zustatek:", ucet)
+    else:
+        print("Mate nedostatecny kredit na tuto polozku")
+        print("Vas zustatek na ucte:", ucet) #chtel jsem vylepsit
+print("Konec nakupu")
+        
