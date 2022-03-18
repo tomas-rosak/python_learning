@@ -1,0 +1,33 @@
+def pocet_slova():
+    mezera = 0
+    last = " "
+    for i in text:
+        if last == " " and i == " ":
+            mezera += 1
+        last = i
+    pocet = pocet_pismen()
+    if pocet != 0:
+        pocet1 = text.count(" ")
+        pocet1 += 1
+        pocet1 = pocet1 - mezera
+        print("Pocet slov:", pocet1)
+    else:
+        print("Pocet slov: 0")
+    
+def pocet_pismen():
+    pismeno = 0
+    for i in text:
+        for x in i:
+            if i != " " and i in "qwertyuiopasdfghjklzxcvbnměščřžýáíéúůQWERTYUIOPLKJHGFDSAZXCVBNMĚŠČŘŽÝÁÍÉÚŮ":
+                pismeno += 1
+    return pismeno
+
+def pocet_znaku():
+    znaky = len(text)
+    print("Pocet znaku:", znaky)
+    
+text = input("Zadej: ")
+pocet_slova()
+pismeno = pocet_pismen()
+print("Pocet pismen:", pismeno)
+pocet_znaku()

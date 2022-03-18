@@ -84,20 +84,7 @@ else:
     print(znaminko3)
 print(znaminko4)
 """
-var cislo11
-cislo22 = "0"
-cislo33 = "0"
-cislo44 = "0"
 
-if cislo1_x is True:
-    cislo11 = cislo1
-if cislo2_x is True:
-    cislo22 = cislo22
-if cislo3_x is True:
-    cislo33 = cislo33
-if cislo4_x is True:
-    cislo44 = cislo4  
-    
 
     
 
